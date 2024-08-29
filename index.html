@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thu Tran Porfolio</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?">
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/style-2.css" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Josefin+Sans&family=Protest+Guerrilla:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <header>
+    <a href="./" class="home-link">
+      <img src="./assets/apple-touch-icon.png" width="60px"/>
+    </a>
+    <div class="lang-menu">
+      <div class="dropdown">
+        <select id="language-dropdown">
+          <option class="lang-option" value="en">en</option>
+          <option class="lang-option" value="vi">vi</option>
+        </select>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="#work"><span id="menuwork">Work</span><svg xmlns="http://www.w3.org/2000/svg" height="20px"
+              viewBox="0 -960 960 960" width="20px" fill="#e8eaed">
+              <path
+                d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm0-72h408v-120H168v120Zm480 0h144v-312H648v312ZM168-456h408v-120H168v120Z" />
+            </svg></a>
+          <a href="#about"><span id="menuabout">About</span><svg xmlns="http://www.w3.org/2000/svg" height="20px"
+              viewBox="0 -960 960 960" width="20px" fill="#e8eaed">
+              <path
+                d="M432-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42Zm.21-72Q462-552 483-573.21t21-51Q504-654 482.79-675t-51-21Q402-696 381-674.79t-21 51Q360-594 381.21-573t51 21ZM885-24 762-147q-21 12-43.5 19.5T672-120q-70 0-119-49t-49-119q0-70 49-119t119-49q70 0 119 49t49 119q0 24-7.5 46.5T813-198L936-75l-51 51ZM671.77-192Q712-192 740-219.77q28-27.78 28-68Q768-328 740.23-356q-27.78-28-68-28Q632-384 604-356.23q-28 27.78-28 68Q576-248 603.77-220q27.78 28 68 28ZM144-192v-96q0-24.76 12.5-45.88T191-367q66-38 139.5-54.5T479-430q-11 16-20.66 33.57T443-360q-57-2-112 12.5T227-304q-5.24 2.29-8.12 6.63Q216-293.03 216-288v24h217q2 19 6.5 37t12.5 35H144Zm288-432Zm1 360Z" />
+            </svg></a>
+          <a href="#contact"><span id="menucontact">Contact</span><svg xmlns="http://www.w3.org/2000/svg" height="20px"
+              viewBox="0 -960 960 960" width="20px" fill="#e8eaed">
+              <path
+                d="M528-480h288v-192H528v192Zm144-41-108-72v-43l108 72 108-72v43l-108 72ZM72-144q-29.7 0-50.85-21.15Q0-186.3 0-216v-528q0-29.7 21.15-50.85Q42.3-816 72-816h816q29.7 0 50.85 21.15Q960-773.7 960-744v528q0 29.7-21.15 50.85Q917.7-144 888-144H72Zm520.81-72H888v-528H72v528q52-56 120-88t143.5-32q75.5 0 141 32.5T592.81-216ZM336-384q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM185-216h299q-33-22-70.5-35t-78-13q-40.5 0-79.5 11.5T185-216Zm151-240q-20.4 0-34.2-13.8Q288-483.6 288-504q0-20.4 13.8-34.2Q315.6-552 336-552q20.4 0 34.2 13.8Q384-524.4 384-504q0 20.4-13.8 34.2Q356.4-456 336-456Zm144-24Z" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="hero-container" class="hero">
+    <div class="hero-text">
+      <h1 id="herotext1">Thu Tran</h1>
+      <p id="herotext2">Self-taught frontend developer</p>
+      <div class="btn-wrapper">
+        <a href="#work">
+          <button class="main-button text-slider">
+            <div class="upper-content">
+              <span id="herobutton1" class="text">See my work</span>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960"
+                  width="30px" fill="black">
+                  <path d="M522-480 333-669l51-51 240 240-240 240-51-51 189-189Z" />
+                </svg></span>
+            </div>
+            <div class="lower-content">
+              <span id="herobutton2" class="text">See my work</span>
+              <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960"
+                  width="30px" fill="#b8966a">
+                  <path d="M522-480 333-669l51-51 240 240-240 240-51-51 189-189Z" />
+                </svg></span>
+            </div>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main id="work" class="main">
+    <h2 id="worktitle" class="section-title">Recent projects</h2>
+    <div class="grid">
+      <div class="cell">
+        <div class="cell-content">
+          <div class="cell-body">
+            <a href="https://purrfectpals.netlify.app/" target="_blank" class="cell-title">Purrfectpals</a>
+            <div id="project1" class="cell-subtitle">Created as my major first project, this is a dog adoption website
+              allowing users to filter data based on multiple complex criteria.</div>
+            <div class="cell-tag"><span>React JS</span> <span>Tailwind CSS</span></div>
+            <div class="work-btn-wrapper">
+              <a href="https://github.com/suja98/purrfectpals" target="_blank">
+                <button class="live-demo-btn text-slider">
+                  <div class="upper-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                        width="20px" fill="#e8eaed">
+                        <path
+                          d="M647.79-72Q618-72 597-93.15T576-144q0-20 9.5-36.5t26.5-25.84V-394q-17-9-26.5-25.5T576-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T699-506.85q21 21.15 21 50.85 0 20-9.5 36.5T684-394v85l144-32v-52.66q-17-9.34-26.5-25.84T792-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T915-506.85q21 21.15 21 50.85 0 20-9.5 36.5T900-394v111l-216 48v29q17 9 26.5 25.5T720-144q0 29.7-21.21 50.85Q677.58-72 647.79-72ZM168-192v-504 504Zm0 0q-29 0-50.5-21.5T96-264v-432q0-29.7 21.5-50.85Q139-768 168-768h216l96 96h312q29.7 0 50.85 21.15Q864-629.7 864-600H450l-96-96H168v432h360v72H168Z" />
+                      </svg></span>
+                  </div>
+                  <div class="lower-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                        width="20px" fill="black">
+                        <path
+                          d="M647.79-72Q618-72 597-93.15T576-144q0-20 9.5-36.5t26.5-25.84V-394q-17-9-26.5-25.5T576-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T699-506.85q21 21.15 21 50.85 0 20-9.5 36.5T684-394v85l144-32v-52.66q-17-9.34-26.5-25.84T792-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T915-506.85q21 21.15 21 50.85 0 20-9.5 36.5T900-394v111l-216 48v29q17 9 26.5 25.5T720-144q0 29.7-21.21 50.85Q677.58-72 647.79-72ZM168-192v-504 504Zm0 0q-29 0-50.5-21.5T96-264v-432q0-29.7 21.5-50.85Q139-768 168-768h216l96 96h312q29.7 0 50.85 21.15Q864-629.7 864-600H450l-96-96H168v432h360v72H168Z" />
+                      </svg></span>
+                  </div>
+                </button>
+              </a>
+              <a href="https://purrfectpals.netlify.app/" target="_blank">
+                <button class="live-demo-btn text-slider">
+                  <div class="upper-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px"
+                        viewBox="0 -960 960 960" width="20px" fill="gainsboro">
+                        <path
+                          d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z" />
+                      </svg></span>
+                  </div>
+                  <div class="lower-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px"
+                        viewBox="0 -960 960 960" width="20px" fill="black">
+                        <path
+                          d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z" />
+                      </svg></span>
+                  </div>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="cell-photo">
+            <img loading="lazy"
+              src="https://lh3.googleusercontent.com/d/1l4cZpRB4bmpIrkKk6RufXQYcR_nmLBDy=s1600?authuser=0"
+              alt="A screenshot of Purrfectpals - My first project">
+          </div>
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="cell-content">
+          <div class="cell-body">
+            <a href="https://suja98.github.io/portfolio" class="cell-title">Thu Tran Portfolio</a>
+            <div id="project2" class="cell-subtitle">This website exemplifies my skills, qualifications, education, and
+              experiences.</div>
+            <div class="cell-tag"><span>Three.js</span> <span>GSAP</span></div>
+            <div class="work-btn-wrapper">
+              <a href="https://github.com/suja98/portfolio" target="_blank">
+                <button class="live-demo-btn text-slider">
+                  <div class="upper-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                        width="20px" fill="#e8eaed">
+                        <path
+                          d="M647.79-72Q618-72 597-93.15T576-144q0-20 9.5-36.5t26.5-25.84V-394q-17-9-26.5-25.5T576-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T699-506.85q21 21.15 21 50.85 0 20-9.5 36.5T684-394v85l144-32v-52.66q-17-9.34-26.5-25.84T792-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T915-506.85q21 21.15 21 50.85 0 20-9.5 36.5T900-394v111l-216 48v29q17 9 26.5 25.5T720-144q0 29.7-21.21 50.85Q677.58-72 647.79-72ZM168-192v-504 504Zm0 0q-29 0-50.5-21.5T96-264v-432q0-29.7 21.5-50.85Q139-768 168-768h216l96 96h312q29.7 0 50.85 21.15Q864-629.7 864-600H450l-96-96H168v432h360v72H168Z" />
+                      </svg></span>
+                  </div>
+                  <div class="lower-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                        width="20px" fill="black">
+                        <path
+                          d="M647.79-72Q618-72 597-93.15T576-144q0-20 9.5-36.5t26.5-25.84V-394q-17-9-26.5-25.5T576-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T699-506.85q21 21.15 21 50.85 0 20-9.5 36.5T684-394v85l144-32v-52.66q-17-9.34-26.5-25.84T792-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T915-506.85q21 21.15 21 50.85 0 20-9.5 36.5T900-394v111l-216 48v29q17 9 26.5 25.5T720-144q0 29.7-21.21 50.85Q677.58-72 647.79-72ZM168-192v-504 504Zm0 0q-29 0-50.5-21.5T96-264v-432q0-29.7 21.5-50.85Q139-768 168-768h216l96 96h312q29.7 0 50.85 21.15Q864-629.7 864-600H450l-96-96H168v432h360v72H168Z" />
+                      </svg></span>
+                  </div>
+                </button>
+              </a>
+              <a href="https://suja98.github.io/portfolio" target="_blank">
+                <button class="live-demo-btn text-slider">
+                  <div class="upper-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px"
+                        viewBox="0 -960 960 960" width="20px" fill="gainsboro">
+                        <path
+                          d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z" />
+                      </svg></span>
+                  </div>
+                  <div class="lower-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px"
+                        viewBox="0 -960 960 960" width="20px" fill="black">
+                        <path
+                          d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z" />
+                      </svg></span>
+                  </div>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="cell-photo">
+            <img loading="lazy"
+              src="https://lh3.googleusercontent.com/d/16hpDBaSQHaYktavFZKptPBkBaIzV47-s=s1600?authuser=0"
+              alt="A screenshot of Thu Tran Portfolio - My second project">
+          </div>
+        </div>
+      </div>
+
+      <div class="cell">
+        <div class="cell-content">
+          <div class="cell-body">
+            <a href="https://suja98.github.io/cutpart" target="_blank" class="cell-title">Cutpart Landing Page</a>
+            <div id="project3" class="cell-subtitle">Self-learning non-responsive project inspired by <a
+                class="hightlight" href="https://dribbble.com/shots/23889841-Cutpart-Landing-Page" target="_blank">HALO
+                LAB</a>.</div>
+            <div class="cell-tag"><span>HTML</span> <span>CSS</span></div>
+            <div class="work-btn-wrapper">
+              <a href="https://github.com/suja98/cutpart" target="_blank">
+                <button class="live-demo-btn text-slider">
+                  <div class="upper-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                        width="20px" fill="#e8eaed">
+                        <path
+                          d="M647.79-72Q618-72 597-93.15T576-144q0-20 9.5-36.5t26.5-25.84V-394q-17-9-26.5-25.5T576-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T699-506.85q21 21.15 21 50.85 0 20-9.5 36.5T684-394v85l144-32v-52.66q-17-9.34-26.5-25.84T792-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T915-506.85q21 21.15 21 50.85 0 20-9.5 36.5T900-394v111l-216 48v29q17 9 26.5 25.5T720-144q0 29.7-21.21 50.85Q677.58-72 647.79-72ZM168-192v-504 504Zm0 0q-29 0-50.5-21.5T96-264v-432q0-29.7 21.5-50.85Q139-768 168-768h216l96 96h312q29.7 0 50.85 21.15Q864-629.7 864-600H450l-96-96H168v432h360v72H168Z" />
+                      </svg></span>
+                  </div>
+                  <div class="lower-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                        width="20px" fill="black">
+                        <path
+                          d="M647.79-72Q618-72 597-93.15T576-144q0-20 9.5-36.5t26.5-25.84V-394q-17-9-26.5-25.5T576-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T699-506.85q21 21.15 21 50.85 0 20-9.5 36.5T684-394v85l144-32v-52.66q-17-9.34-26.5-25.84T792-456q0-29.7 21.21-50.85 21.21-21.15 51-21.15T915-506.85q21 21.15 21 50.85 0 20-9.5 36.5T900-394v111l-216 48v29q17 9 26.5 25.5T720-144q0 29.7-21.21 50.85Q677.58-72 647.79-72ZM168-192v-504 504Zm0 0q-29 0-50.5-21.5T96-264v-432q0-29.7 21.5-50.85Q139-768 168-768h216l96 96h312q29.7 0 50.85 21.15Q864-629.7 864-600H450l-96-96H168v432h360v72H168Z" />
+                      </svg></span>
+                  </div>
+                </button>
+              </a>
+              <a href="https://suja98.github.io/cutpart" target="_blank">
+                <button class="live-demo-btn text-slider">
+                  <div class="upper-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px"
+                        viewBox="0 -960 960 960" width="20px" fill="gainsboro">
+                        <path
+                          d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z" />
+                      </svg></span>
+                  </div>
+                  <div class="lower-content">
+                    <span class="text"><svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px"
+                        viewBox="0 -960 960 960" width="20px" fill="black">
+                        <path
+                          d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z" />
+                      </svg></span>
+                  </div>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="cell-photo">
+            <img loading="lazy"
+              src="https://lh3.googleusercontent.com/d/1MFbz319eu0m9jilBhYPzn0UB1QyTuzUg=s1600?authuser=0"
+              alt="A screenshot of Cutpart Landing Page - my self-learning project">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <section id="about">
+    <div class="about-container">
+      <h2 id="abouttitle" class="section-title">About me</h2>
+      <div class="section-container">
+        <div class="section-shape">
+          <div class="cube">
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+            <div class="face">
+              <div class="backface"></div>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <p id="info1" class="info">My name is <span class="highlight">Tran Thi Anh Thu</span> based in Viet Nam but
+            you can call me <span class="highlight">SuJa</span>. I love to <span class="highlight">design and
+              develop</span> visually appealing and aesthetically <span class="highlight">websites</span> while focusing
+            on smooth and intuitive <span class="highlight">user interactions and navigation</span>.</p>
+          <p id="info2">Check out my CV <a
+              href="https://drive.google.com/file/d/1cMFfZJfx3qgaG4EGXojm5CrLZj64zfIt/view?usp=drive_link"
+              target="_blank" class="highlight">here</a>.</p>
+
+          <div class="info-details">
+            <div id="programlanguage" class="cell-lists">
+              <div class="cell-list-container">
+                <span id="machinelang" class="highlight">LANGUAGES</span>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>SASS/SCSS</li>
+                  <li>Vanilla Javascript</li>
+                  <li>Typescript</li>
+                </ul>
+              </div>
+              <div class="cell-list-container">
+                <span id="framework" class="highlight">FRAMEWORKS/ LIBRARIES</span>
+                <ul>
+                  <li>ReactJS</li>
+                  <li>Next.JS</li>
+                  <li>GSAP</li>
+                  <li>Three.js</li>
+                  <li>Tailwind CSS</li>
+                  <li>Bootstrap</li>
+                </ul>
+              </div>
+              <div class="cell-list-container">
+                <span id="special" class="highlight">SPECIAL</span>
+                <ul>
+                  <li>Googling</li>
+                  <li>Stack Overflow</li>
+                  <li>ChatGPT</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 id="contacttitle" class="section-title">Contact</h2>
+    <div class="section-container">
+      <div class="contact-container">
+
+        <div class="contact-icons">
+          <div class="icon-containers-xl">
+            <a href="https://github.com/suja98" target="_blank"><span class="icon-container-xl"><svg
+                  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24"
+                  fill="gainsboro">
+                  <path
+                    d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.6,5,2.5,9.3,6.9,10.7v-2.3c0,0-0.4,0.1-0.9,0.1c-1.4,0-2-1.2-2.1-1.9 c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1c0.4,0,0.7-0.1,0.9-0.2 c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6C7,7.2,7,6.6,7.3,6c0,0,1.4,0,2.8,1.3 C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3C15.3,6,16.8,6,16.8,6C17,6.6,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4c0.7,0.8,1.2,1.8,1.2,3 c0,2.2-1.7,3.5-4,4c0.6,0.5,1,1.4,1,2.3v3.3c4.1-1.3,7-5.1,7-9.5C22,6.1,16.9,1.4,10.9,2.1z">
+                  </path>
+                </svg></span></a>
+            <a href="https://www.linkedin.com/in/thusujavn" target="_blank"><span class="icon-container-xl"><svg
+                  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30"
+                  fill="gainsboro">
+                  <path
+                    d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z">
+                  </path>
+                </svg></span></a>
+            <a href="https://www.facebook.com/ThuSuJaVN" target="_blank"><span class="icon-container-xl"><svg
+                  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30"
+                  fill="gainsboro">
+                  <path
+                    d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z">
+                  </path>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <div class="contact-cards">
+            <div class="contact-card-container">
+              <div class="contact-card">
+                <span class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" height="25px"
+                    viewBox="0 -960 960 960" width="25px" fill="#e8eaed">
+                    <path
+                      d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z" />
+                  </svg></span>
+                <span class="successful-copy blur hide">Copied!</span>
+                <span><strong>Email:</strong></span>
+                <span class="contact-email">thutran0997@gmail.com&nbsp;<svg class="success-icon"
+                    xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="20px"
+                    fill="#e8eaed">
+                    <path
+                      d="M360-240q-29.7 0-50.85-21.15Q288-282.3 288-312v-480q0-29.7 21.15-50.85Q330.3-864 360-864h384q29.7 0 50.85 21.15Q816-821.7 816-792v480q0 29.7-21.15 50.85Q773.7-240 744-240H360Zm0-72h384v-480H360v480ZM216-96q-29.7 0-50.85-21.15Q144-138.3 144-168v-552h72v552h456v72H216Zm144-216v-480 480Z" />
+                  </svg></span>
+              </div>
+            </div>
+            <div class="contact-card-container">
+              <div class="contact-card">
+                <span class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" height="25px"
+                    viewBox="0 -960 960 960" width="25px" fill="#e8eaed">
+                    <path
+                      d="M264-48q-29.7 0-50.85-21.15Q192-90.3 192-120v-720q0-29.7 21.15-50.85Q234.3-912 264-912h432q29.7 0 50.85 21.15Q768-869.7 768-840v720q0 29.7-21.15 50.85Q725.7-48 696-48H264Zm0-120v48h432v-48H264Zm0-72h432v-480H264v480Zm0-552h432v-48H264v48Zm0 0v-48 48Zm0 624v48-48Z" />
+                  </svg></span>
+                <span class="successful-copy successful-copy-phone blur hide">Copied!</span>
+                <span id="contactphone"><strong>Phone:</strong></span>
+                <span class="phone-number">+84943253140&nbsp;<svg class="success-icon"
+                    xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="20px"
+                    fill="#e8eaed">
+                    <path
+                      d="M360-240q-29.7 0-50.85-21.15Q288-282.3 288-312v-480q0-29.7 21.15-50.85Q330.3-864 360-864h384q29.7 0 50.85 21.15Q816-821.7 816-792v480q0 29.7-21.15 50.85Q773.7-240 744-240H360Zm0-72h384v-480H360v480ZM216-96q-29.7 0-50.85-21.15Q144-138.3 144-168v-552h72v552h456v72H216Zm144-216v-480 480Z" />
+                  </svg></span>
+              </div>
+            </div>
+            <div class="contact-card-container">
+              <div class="contact-card">
+                <span class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" height="25px"
+                    viewBox="0 -960 960 960" width="25px" fill="#e8eaed">
+                    <path
+                      d="M360-440h80v-110h80v110h80v-190l-120-80-120 80v190Zm120 254q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z" />
+                  </svg></span>
+                <span id="contactlocation1"><strong>Location:</strong></span>
+
+                <span id="contactlocation2"><a href="https://en.wikipedia.org/wiki/Da_Lat" target="_blank">Da Lat,
+                    Viet Nam</a>&nbsp;<svg class="success-icon" xmlns="http://www.w3.org/2000/svg" height="20px"
+                    viewBox="0 -960 960 960" width="20px" fill="#e8eaed">
+                    <path
+                      d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z" />
+                  </svg></span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+  <footer class="footer">
+
+    <div class="footer-text">
+      <span id="footertext">MIT License &#10084;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </span>
+    </div>
+  </footer>
+
+  <a href="#hero-container" id="scroll-to-top-btn"><span>↑</span></a>
+
+  <script src="js/index.js"></script>
+  <script src="js/translation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script type="module" src="js/script.js"></script>
+
+</body>
+
+</html>
